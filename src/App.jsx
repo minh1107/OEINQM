@@ -4,6 +4,7 @@ function App() {
   return (
     <div className="app">
       <Slide />
+      <div style={{height: '100vh'}}></div>
     </div>
   );
 }
