@@ -44,24 +44,24 @@ const Slide = () => {
           ref={(el) => (buttonRef.current[0] = el)}
           className="slide__button-item button-image-1"
         >
-          {changeSlide == 0 && <p className="slide__content-top">15</p>}
-          {changeSlide == 0 && <p className="slide__content-bottom">Experience</p>}
+          {changeSlide === 0 && <p className="slide__content-top">15</p>}
+          {changeSlide === 0 && <p className="slide__content-bottom">Experience</p>}
         </button>
         <button
           onClick={() => handleActive(1)}
           ref={(el) => (buttonRef.current[1] = el)}
           className="slide__button-item button-image-2"
         >
-          {changeSlide == 1 && <p className="slide__content-top">50</p>}
-          {changeSlide == 1 && <p className="slide__content-bottom">Customers</p>}
+          {changeSlide === 1 && <p className="slide__content-top">50</p>}
+          {changeSlide === 1 && <p className="slide__content-bottom">Customers</p>}
         </button>
         <button
           onClick={() => handleActive(2)}
           ref={(el) => (buttonRef.current[2] = el)}
           className="slide__button-item button-image-3"
         >
-          {changeSlide == 2 && <img src={dowloadProfileImg} height={64} width={64} alt="" />}
-          {changeSlide == 2 && <p className="slide__content-bottom">Experience</p>}
+          {changeSlide === 2 && <img src={dowloadProfileImg} height={64} width={64} alt="" />}
+          {changeSlide === 2 && <p className="slide__content-bottom">Experience</p>}
         </button>
       </div>
     </div>

@@ -13,10 +13,10 @@
   0% {
     transform: translateX(
       100%
-    ); /* Starting position: slide is off-screen to the right */
+    ); 
   }
   100% {
-    transform: translateX(0); /* Ending position: slide is fully visible */
+    transform: translateX(0); 
   }
 }
 

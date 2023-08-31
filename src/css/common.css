@@ -1,0 +1,17 @@
+.text-blue {
+  color: #4ca757;
+}
+
+.text-run {
+  background: linear-gradient(180deg, #4ca757 0%, #16a571 100%);
+  background-clip: text;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150px;
+  text-transform: uppercase;
+  color: black;
+  -webkit-text-stroke: 1px #16a571; /* Adjust the width and color */
+  color: transparent;
+
+}
