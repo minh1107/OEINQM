@@ -1,13 +1,51 @@
-body {
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "intelligent";
+  font-weight: normal;
+  src: url("/src/assets/font/IntelligentBlack_1.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "intelligent";
+  font-weight: bold;
+  src: url("/src/assets/font/IntelligentBold_1.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "intelligent";
+  font-weight: bolder;
+  src: url("/src/assets/font/IntelligentExtrabold_1.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "intelligent";
+  font-weight: lighter;
+  src: url("/src/assets/font/IntelligentLight.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "intelligent";
+  font-style: italic; 
+  src: url("/src/assets/font/IntelligentLightItalic_1.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "intelligent";
+  font-weight: normal;
+  src: url("/src/assets/font/IntelligentRegular_3.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "intelligent";
+  font-weight: normal;
+  src: url("/src/assets/font/IntelligentSemibold_1.otf") format("opentype");
+}
+
+.app {
+  font-family: "intelligent";
 }
