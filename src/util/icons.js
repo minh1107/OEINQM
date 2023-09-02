@@ -1,7 +1,10 @@
 import {FiChevronDown} from 'react-icons/fi'
+import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai'
 
 const icons = {
-    FiChevronDown
+    FiChevronDown,
+    AiOutlineRight,
+    AiOutlineLeft
 }
 
 export default icons

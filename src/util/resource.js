@@ -1,3 +1,5 @@
+import lastNew1Img from '../assets/images/lastNews1.png'
+
 const slideContent = [
     {
       id: 1,
@@ -34,4 +36,49 @@ const slideContent = [
     },
   ];
 
-export { slideContent }
+const latestNews = [
+  {
+    id: 1,
+    dateTime: '26.04.2022 / Event',
+    content: 'Lorem ipsum dolor sit amet consectetur. Quisque curabitur nunc diam laoreet.',
+    img: lastNew1Img
+  },
+  {
+    id: 2,
+    dateTime: '26.04.2022 / Event',
+    content: 'Lorem ipsum dolor sit amet consectetur. Quisque curabitur nunc diam laoreet.',
+    img: lastNew1Img
+  },
+  {
+    id: 3,
+    dateTime: '26.04.2022 / Event',
+    content: 'Lorem ipsum dolor sit amet consectetur. Quisque curabitur nunc diam laoreet.',
+    img: lastNew1Img
+  },
+  {
+    id: 1,
+    dateTime: '26.04.2022 / Event',
+    content: 'Lorem ipsum dolor sit amet consectetur. Quisque curabitur nunc diam laoreet.',
+    img: lastNew1Img
+  },
+  {
+    id: 4,
+    dateTime: '26.04.2022 / Event',
+    content: 'Lorem ipsum dolor sit amet consectetur. Quisque curabitur nunc diam laoreet.',
+    img: lastNew1Img
+  },
+  {
+    id: 5,
+    dateTime: '26.04.2022 / Event',
+    content: 'Lorem ipsum dolor sit amet consectetur. Quisque curabitur nunc diam laoreet.',
+    img: lastNew1Img
+  },
+  {
+    id: 6,
+    dateTime: '26.04.2022 / Event',
+    content: 'Lorem ipsum dolor sit amet consectetur. Quisque curabitur nunc diam laoreet.',
+    img: lastNew1Img
+  },
+]
+
+export { slideContent, latestNews }

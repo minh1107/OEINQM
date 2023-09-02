@@ -15,3 +15,36 @@
   color: transparent;
 
 }
+
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.322);
+  border: 1px solid #16a571;
+}
+
+.button-active {
+  background-color: white;
+  border: 1px solid #16a571;
+}
+
+.button-green {
+  background: linear-gradient(180deg, #4ca757 0%, #16a571 100%);
+}
+
+/* line */
+.line-green {
+  width: 284.229px;
+  height: 3px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #4CA757 0%, #16A571 100%);
+}
