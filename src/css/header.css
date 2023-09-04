@@ -1,15 +1,39 @@
-:root {
-  --header-height: 150px
-}
-
 .header {
   position: fixed;
-  top: 0;
   left: 0;
   color: white;
   width: 100%;
   padding: 0 5%;
   z-index: 100;
+  animation: heightChange 0.5s ease-in forwards;
+}
+
+/* Xử lý animation header */
+
+@keyframes heightChange {
+  0% {
+    top: -155px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes heightChangeReverse {
+  from {
+    top: 0;
+  }
+  to {
+    top: -155px;
+  }
+}
+
+.height__change {
+  animation: heightChange 0.5s ease-in forwards;
+}
+
+.height__change-reverse {
+  animation: heightChangeReverse 0.5s ease-in forwards;
 }
 
 .header__down {
@@ -20,6 +44,26 @@
 .header__down > div > p {
   border: 1px solid black;
 }
+
+
+.header__show {
+  background-color: #f8f0f060;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  border-radius: 50%;
+  width: 50px;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.header__to-top {
+  top: 30px;
+}
+/*  */
 
 .header__top {
   display: flex;
@@ -197,8 +241,6 @@
 
 }
 
-
-
 .menu-item:hover .sub-menu {
   opacity: 1;
   visibility: visible;
@@ -277,26 +319,4 @@
 
 .header__down .menu-item-text1::before {
   background-color: black; 
-}
-
-.header__show {
-  background-color: #f8f0f060;
-  border: none;
-  cursor: pointer;
-  height: 50px;
-  border-radius: 50%;
-  width: 50px;
-  position: fixed;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-}
-
-.header__to-top {
-  top: 30px;
-}
-
-.header__hidden {
-  display: none;
 }

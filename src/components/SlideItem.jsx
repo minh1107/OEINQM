@@ -1,8 +1,8 @@
 import React from "react";
 
-const SlideItem = ({ className, titleTop, titleBottomColor, titleBottomNoColor, content}) => {
+const SlideItem = ({ className, titleTop,changeSlide, titleBottomColor, titleBottomNoColor, content}) => {
   return (
-    <div className={`${className} slide__item`}>
+    <div className={`${className} slide__item-remove slide__item-add slide__item`}>
       <h1 className="slide__title">
         <p>{titleTop}</p>
         <span className="slide__title-bottom">

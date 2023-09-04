@@ -31,13 +31,14 @@ const contentSubNav = [
 const SubNavHome = () => {
     const [content, setContent] = useState(contentSubNav[0]);
 
+    console.log(content)
     return <div className='sub-menu'>
         <div className='subnav'>
         <ul className='subnav-right'>
-            <li onMouseEnter={() => setContent(contentSubNav[0])}>Introduce</li>
-            <li onMouseEnter={() => setContent(contentSubNav[1])}>Our People</li>
-            <li onMouseEnter={() => setContent(contentSubNav[2])}>QHSE</li>
-            <li onMouseEnter={() => setContent(contentSubNav[3])}>Asset And Facility</li>
+            <li onMouseEnter={() => setContent(contentSubNav[0])} className='menu-item-text1'>Introduce</li>
+            <li onMouseEnter={() => setContent(contentSubNav[1])} className='menu-item-text1'>Our People</li>
+            <li onMouseEnter={() => setContent(contentSubNav[2])} className='menu-item-text1'>QHSE</li>
+            <li onMouseEnter={() => setContent(contentSubNav[3])} className='menu-item-text1'>Asset And Facility</li>
         </ul>
         <div className='subnav-left'>
             <img src={content?.img} width={342} height={391} alt=''/>

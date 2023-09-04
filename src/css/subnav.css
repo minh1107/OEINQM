@@ -2,7 +2,6 @@
     display: flex;
     padding: 0 5%;
     margin-top: 67px;
-    pointer-events: none;
 }
 
 .subnav-right {
@@ -19,7 +18,9 @@
     padding: 27px 0;
     list-style: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+    position: relative;
 }
+
 
 .subnav-right li:last-child {
     border-bottom: none;

@@ -6,19 +6,35 @@
   width: 100vw;
   height: 90vh;
   position: relative;
+}
+
+.slide__item-add {
   animation: slideAnimation 1s ease-in-out;
+}
+
+.slide__item-remove {
+  animation: slideAnimationReverse 1s ease-in-out;
 }
 
 @keyframes slideAnimation {
   0% {
-    transform: translateX(
-      100%
-    ); 
+    opacity: 0.5;
   }
   100% {
-    transform: translateX(0); 
+    opacity: 1;
   }
 }
+
+@keyframes slideAnimationReverse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 
 .slide1 {
   background-image: url("/src/assets/images/slide1.png");
@@ -44,7 +60,6 @@
 .slide__title {
   position: absolute;
   left: 5%;
-  top: 50%;
   transform: translateY(-55%);
   font-size: 127px;
   z-index: 20;
@@ -55,11 +70,24 @@
   color: transparent;
   white-space: pre-line;
   z-index: 0;
+  animation: toTop 1s forwards;
+  opacity: 0;
+  animation-delay: 1.2s;
+}
+
+@keyframes toTop {
+  0% {
+    top: 70%;
+    opacity: 0;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
 }
 
 .slide__content {
   position: absolute;
-  right: 10%;
   top: 74%;
   transform: translateY(-50%);
   color: #f9f0ec;
@@ -68,6 +96,20 @@
   font-weight: 100;
   line-height: 28px;
   width: 448px;
+  animation: toLeft 1s forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+
+@keyframes toLeft {
+  0% {
+    right: 0;
+    opacity: 0;
+  }
+  100% {
+    right: 10%;
+    opacity: 1;
+  }
 }
 
 .slide__title-color {
@@ -83,14 +125,13 @@
   justify-content: space-evenly;
   position: absolute;
   align-items: center;
-  bottom: 30px;
+  bottom: 14px;
 }
 
 #button__active {
-  height: 159px;
-  width: 159px;
   background-color: #4ca757 !important;
   background-image: none;
+  animation: slideButtonKeyframe 0.3s forwards;
 }
 
 .slide__button-item {
@@ -104,6 +145,31 @@
   border: 1px solid white;
   color: white;
   cursor: pointer;
+  animation: slideButtonKeyframeReverse 0.3s forwards;
+  position: relative;
+  z-index: 100;
+}
+
+@keyframes slideButtonKeyframe {
+  0% {
+    width: 104px;
+    height: 104px;
+  }
+  100% {
+    height: 159px;
+    width: 159px;
+  }
+}
+
+@keyframes slideButtonKeyframeReverse {
+  0% {
+    height: 159px;
+    width: 159px;
+  }
+  100% {
+    width: 104px;
+    height: 104px;
+  }
 }
 
 .slick__item-bottom {
@@ -126,8 +192,9 @@
   background-image: url("/src/assets/images/slide3.png");
 }
 
-.slick-dots {
-  background-image: url("/src/assets/images/greenCircle.svg");
+.image__download-profile {
+    height: 64px;
+    width: 64px;
 }
 
 .slide__content-top {
@@ -144,19 +211,57 @@
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; /* 200% */
+  line-height: 24px; 
   text-transform: uppercase;
 }
 
-li > .slick-item > p {
-  display: none;
+.slide__process {
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #4ca757;
+  position: absolute;
+  bottom: 78px;
+  transform: translateY(70%);
+  animation: changeWidthProcess1 5s linear infinite;
+
 }
 
-li.slick-active > .slick-item > p {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding-bottom: 10px;
+.changeWidthProcess1 {
+  animation: changeWidthProcess1 5s linear infinite;
+}
+
+.changeWidthProcess2 {
+  animation: changeWidthProcess2 5s linear infinite;
+}
+
+.changeWidthProcess3 {
+  animation: changeWidthProcess3 5s linear infinite;
+}
+
+@keyframes changeWidthProcess1 {
+  0% {
+    width: 25%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes changeWidthProcess2 {
+  0% {
+    width: 50%;
+  }
+  100% {
+    width: 75%;
+  }
+}
+
+@keyframes changeWidthProcess3 {
+  0% {
+    width: 75%;
+  }
+  100% {
+    width: 100%;
+  }
 }
