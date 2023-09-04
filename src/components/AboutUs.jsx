@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../css/common.css'
 import '../css/about.css'
+import AOS from 'aos';
 
 const AboutUs = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className='about'>
         <div>
             <h3 className='about__title'>About us</h3>
-            <h1 className='about__content'>
+            <h1 data-aos='fade-right' data-aos-duration="1000" className='about__content'>
                 <span className='text-blue'>Offshore Energy Installation</span>  
                 OEI is your gateway to renewable energy and 
                 <span className='text-blue'>Oil</span> & <span className='text-blue'>Gas</span> solutions. 
@@ -15,7 +19,7 @@ const AboutUs = () => {
             <button className='about__button'>See more</button>
         </div>
         <div className='about__right'>
-            <div className='about__right-item-1'></div>
+            <div data-aos='fade-left' data-aos-duration="1000" className='about__right-item-1'></div>
             <div className='about__right-item-2'></div>
             <div className='about__right-item-3'></div>
             <div className='about__right-item-4'></div>

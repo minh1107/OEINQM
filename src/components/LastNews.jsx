@@ -12,6 +12,34 @@ const settings = {
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
+  centerPadding: "20px",
+  initialSlide: 0,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 };
 const LastNews = () => {
   const sliderRef = useRef(null);
@@ -48,20 +76,19 @@ const LastNews = () => {
         <div className='news__title'>
             <div className='news__title-left'>
                 <p>News</p>
-                <h1>Lastest News</h1>
+                <h1 className='wave-text'>Lastest News</h1>
             </div>
             <button className='news__title-right'>SEE MORE</button>
         </div>
         <Slider {...settings} ref={sliderRef}>
             {latestNews.map((item, index) => (
-              <div key={item.id} className='slide-box'>
-                <div className={`news__feed-item`}>
+              <div>
+                <div key={item.id} className={`news__feed-item`}>
                   <img className='news__feed-img' src={item.img} alt=''/>
                   <p className='news__feed-time'>{item.dateTime}</p>
                   <p className='news__feed-content'>{item.content}</p>
                   <div className='news__feed-button'>SEE MORE +</div>
-                </div>
-              </div>
+                </div></div>
             ))}
         </Slider>
         <div className='news__button'>

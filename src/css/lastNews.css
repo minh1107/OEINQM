@@ -48,17 +48,9 @@
     border: none;
     height: 60px;
 }
-/* 
-.news__feed {
-    display: flex;
-    gap: 25px;
-} */
-
 .news__feed-item {
-    width: 374px;
     color: black;
 }
-
 
 .news__feed-item:hover {
     background: linear-gradient(180deg, #4CA757 0%, #16A571 100%);
@@ -68,7 +60,9 @@
 
 .news__feed-img {
     padding-bottom: 25px;
-    width: 374px;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
 }
 
 .news__feed-time {
@@ -109,3 +103,13 @@
     align-items: center;
     margin-top: 41px;
 }
+
+.slick-slide {
+    padding-right: 20px;
+
+}
+
+.slick-list {
+    height: 460px;
+}
+

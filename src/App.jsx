@@ -8,6 +8,8 @@ import ClientAndPartner from "components/ClientAndPartner";
 import LastNews from "components/LastNews";
 import Footer from "components/Footer";
 import Locate from "components/Locate";
+import 'aos/dist/aos.css';
+import 'css/mobile.css'
 
 function App() {
   return (
@@ -22,7 +24,6 @@ function App() {
       <ClientAndPartner />
       <LastNews />
       <Footer />
-      <div style={{height: '100vh'}}></div>
     </div>
   );
 }

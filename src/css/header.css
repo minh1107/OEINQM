@@ -1,3 +1,7 @@
+:root {
+  --header-height: 150px
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -6,6 +10,15 @@
   width: 100%;
   padding: 0 5%;
   z-index: 100;
+}
+
+.header__down {
+  background-color: white;
+  color: black;
+}
+
+.header__down > div > p {
+  border: 1px solid black;
 }
 
 .header__top {
@@ -43,6 +56,10 @@
   font-weight: 700;
   z-index: 100;
   line-height: 20px;
+}
+
+.header__down .header__main-item {
+  border-top: 1px solid black;
 }
 
 .header__main-item:hover .header__main-navbar {
@@ -147,7 +164,7 @@
   margin-right: 5px;
 }
 .menu-item:hover .sub-menu {
- opacity: 1;
+  opacity: 1;
   visibility: visible;
   transform: translateX(-50%) scaleY(1);
 }
@@ -158,18 +175,29 @@
   left: 0;
   width: 100vw;
   height: 100vh;
- background: linear-gradient(180deg, #4ca757 0%, #16a571 100%);
+  background: linear-gradient(180deg, #4ca757 0%, #16a571 100%);
   opacity: 0;
   visibility: hidden;
   z-index: 9; 
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  pointer-events: none; 
+  /* pointer-events: none;  */
   visibility: hidden;
   transform-origin: center top;
   transform: translateX(-50%) scaleY(0);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   list-style: none;
 }
+/* 
+.header{
+  background: linear-gradient(180deg, #4CA757 0%, #16A571 100%);
+} */
+
+.header + .menu-item:hover  {
+  background: linear-gradient(180deg, #4CA757 0%, #16A571 100%);
+
+}
+
+
 
 .menu-item:hover .sub-menu {
   opacity: 1;
@@ -177,7 +205,6 @@
   transform: translateY(0);
   
 }
-
 
 .menu-item:hover .sub-menu {
   display: block;
@@ -202,8 +229,74 @@
   display: block;
   width: 100%;
   height: 1px;
-  background-color: #FFF; 
+  background-color: rgba(255, 255, 255, 0.15); 
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.menu-item-text1::after {
+  content: '';
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: widthChangeReverse 0.5s ease-in forwards;
+}
+
+.menu-item-text1:hover::after {
+  animation: widthChange .5s ease-in forwards;
+}
+
+@keyframes widthChange {
+  from {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 0px;
+  }
+  to {
+    background-color: white;
+    width: 100%;
+  }
+}
+
+@keyframes widthChangeReverse {
+  from {
+    width: 100%;
+    background-color: white;
+  }
+  to {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 0px;
+  }
+}
+
+.element-to-animate {
+  animation: widthChange 2s ease-in; /* Sử dụng animation widthChange trong 2 giây với hiệu ứng "ease" */
+}
+
+.header__down .menu-item-text1::before {
+  background-color: black; 
+}
+
+.header__show {
+  background-color: #f8f0f060;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  border-radius: 50%;
+  width: 50px;
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.header__to-top {
+  top: 30px;
+}
+
+.header__hidden {
+  display: none;
 }
