@@ -47,9 +47,12 @@
     box-shadow: 0px 0px 50px 0px rgba(73, 178, 93, 0.16);
     border: none;
     height: 60px;
+    cursor: pointer;
 }
 .news__feed-item {
     color: black;
+    display: flex;
+    flex-direction: column;
 }
 
 .news__feed-item:hover {
@@ -60,9 +63,10 @@
 
 .news__feed-img {
     padding-bottom: 25px;
-    object-fit: cover;
     object-position: center;
+    object-fit: fill;
     width: 100%;
+    aspect-ratio: 100/74.7;
 }
 
 .news__feed-time {
@@ -102,6 +106,7 @@
     gap: 62px;
     align-items: center;
     margin-top: 41px;
+    gap: 20px;
 }
 
 .slick-slide {
@@ -111,5 +116,9 @@
 
 .slick-list {
     height: 460px;
+}
+
+.news__title-right-mobile {
+    display: none;
 }
 

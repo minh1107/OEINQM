@@ -56,7 +56,7 @@ const Slide = () => {
       </div>
       <div className="slide__button">
         <div
-          className={`slide__process changeWidthProcess${changeSlide}`}
+          className={`slide__process changeWidthProcess${changeSlide+1}`}
         ></div>
         <button
           onClick={() => handleActive(0)}

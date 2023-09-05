@@ -54,8 +54,12 @@ const Footer = () => {
         </div>
         <div className='footer__bottom'>
           <p>Contact</p>
-          <p>(+84) 254 6295268</p>
-          <p>info@oei.com.vn</p>
+          <p className='footer__bottom-item'>(+84) 254 6295268</p>
+          <p className='footer__bottom-item'>info@oei.com.vn</p>
+          <div className='footer__bottom-item-mobile'>
+            <p>(+84) 254 6295268</p>
+            <p>info@oei.com.vn</p>
+          </div>
           <div style={{width: '20%'}}></div>
         </div>
     </div>

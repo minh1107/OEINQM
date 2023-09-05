@@ -17,6 +17,7 @@ function App() {
       <Slide />
       <AboutUs />
       <TextRun text={'offshore <span class="text-blue">Energy</span> installation'}/>
+      <div style={{marginBottom: '54px'}}></div>
       <Member />
       <Service />
       <TextRun text={'building for <span class="text-blue">Green</span> energy'} />

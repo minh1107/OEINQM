@@ -7,14 +7,16 @@ import "slick-carousel/slick/slick-theme.css";
 import Slide from "./Slide";
 import icons from "util/icons";
 import logoColor from 'assets/images/logoColor.png'
+import Menu from "./Menu";
 
-const { BsChevronDoubleDown } = icons;
+const { BsChevronDoubleDown, AiOutlineMenu } = icons;
 
 const Header = () => {
   const headerRef = useRef()
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showHeader, setShowHeader] = useState(true)
+  const [isShowMenu, setIsShowMenu] = useState(false)
 
   const handleDropdownClick = (id) => {
     setActiveDropdown(id === activeDropdown ? null : id);
@@ -39,6 +41,7 @@ const Header = () => {
 
   return (
     <div className="box">
+      {isShowMenu && <Menu setIsShowMenu={setIsShowMenu} /> }
       <Slide />
       {(scrollPosition >= 150) && 
         <button onClick={handleToggleHeader}
@@ -50,6 +53,7 @@ const Header = () => {
           <div className="header__top">
             <img src={`${(scrollPosition >= 150) ? logoColor : logo}`} className="header__top-img" alt="" />
             <p className="header__top-number">+00 9875466</p>
+            <div onClick={() => setIsShowMenu(true)} className="header-icon-mobile"><AiOutlineMenu color="white" size={25}/></div>
           </div>
           <header>
             <nav>

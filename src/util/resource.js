@@ -1,4 +1,7 @@
 import lastNew1Img from '../assets/images/lastNews1.png'
+import lastNew2Img from '../assets/images/about1.png'
+import lastNew3Img from '../assets/images/about2.png'
+import lastNew4Img from '../assets/images/about3.png'
 
 const slideContent = [
     {
@@ -47,19 +50,19 @@ const latestNews = [
     id: 2,
     dateTime: '26.04.2022 / Event',
     content: 'Lorem ipsum dolor sit amet consectetur. Quisque curabitur nunc diam laoreet.',
-    img: lastNew1Img
+    img: lastNew2Img
   },
   {
     id: 3,
     dateTime: '26.04.2022 / Event',
     content: 'Lorem ipsum dolor sit amet consectetur. Quisque curabitur nunc diam laoreet.',
-    img: lastNew1Img
+    img: lastNew3Img
   },
   {
     id: 1,
     dateTime: '26.04.2022 / Event',
     content: 'Lorem ipsum dolor sit amet consectetur. Quisque curabitur nunc diam laoreet.',
-    img: lastNew1Img
+    img: lastNew4Img
   },
   {
     id: 4,

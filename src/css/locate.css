@@ -66,6 +66,7 @@
     border-radius: 20px;
     border: 1px solid white;
     cursor: pointer;
+    z-index: 100;
 }
 
 .locate__select-item {

@@ -1,12 +1,15 @@
 import {FiChevronDown} from 'react-icons/fi'
-import { AiOutlineRight, AiOutlineLeft } from 'react-icons/ai'
-import {BsChevronDoubleDown} from 'react-icons/bs'
+import { AiOutlineRight, AiOutlineLeft, AiOutlineMenu } from 'react-icons/ai'
+import {BsChevronDoubleDown, BsChevronDown} from 'react-icons/bs'
+import {TfiClose} from 'react-icons/tfi'
 
 const icons = {
     FiChevronDown,
     AiOutlineRight,
     AiOutlineLeft,
-    BsChevronDoubleDown
+    BsChevronDoubleDown,
+    AiOutlineMenu,
+    TfiClose, BsChevronDown
 }
 
 export default icons

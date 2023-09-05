@@ -78,7 +78,9 @@ const Member = () => {
                     <span data-aos='fade-up' data-aos-delay="800">o</span> 
                     <span data-aos='fade-up' data-aos-delay="900">f</span> 
                 </h1>
-                <p>A business development organization helping to make valuate connection between business in the global energy sector.</p>
+                {isShow === 1 && <p>A business development organization helping to make valuate connection between business in the global energy sector.</p>}
+                {isShow === 2 && <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, aperiam laboriosam eveniet corrupti ut reiciendis</p>}
+                {isShow === 3 && <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sed tempora eos voluptatem corrupti repellat?</p>}
                 <div className='button-group'>
                     <button onMouseEnter={() => setIsHoverButtonLeft(true)} 
                             onMouseLeave={() => setIsHoverButtonLeft(false)}
@@ -106,7 +108,7 @@ const Member = () => {
         </div>
         <div className='member__bottom'>
             <h1>Company value reflect its ability to generate future profits, management and market position.</h1>
-            <div className='member__bottom-archive'>
+            <div className='member__bottom-archive' id='member__bottom-archive-mobile'>
                 <div className='member__bottom-archive-item'>
                     <h1>
                         <div id="number-counter">

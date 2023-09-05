@@ -16,7 +16,6 @@
 
 }
 
-
 .button-group {
   display: flex;
   gap: 10px;
@@ -61,10 +60,10 @@
 }
 /* line */
 .line-green {
-  width: 284.229px;
   height: 3px;
   flex-shrink: 0;
   background: linear-gradient(180deg, #4CA757 0%, #16A571 100%);
+  transition: width 0.3s ease;
 }
 
 

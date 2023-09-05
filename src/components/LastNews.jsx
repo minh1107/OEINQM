@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const { AiOutlineRight, AiOutlineLeft } = icons
 const settings = {
   infinite: true,
+  dots: false,
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
@@ -45,11 +46,8 @@ const LastNews = () => {
   const sliderRef = useRef(null);
   const [isButtonActive, setIsButtonActive] = useState(false)
   const [isShow, setIsShow] = useState(1)
+  const slideIndex = useRef()
 
-  const handleChangeMember = (number) => {
-      setIsShow(number)
-
-  }
   const handleChangeMemberLeft = () => {
       setIsButtonActive(true)
       if(isShow === 1) {
@@ -64,6 +62,13 @@ const LastNews = () => {
       } else setIsShow(pre => pre + 1)
       sliderRef.current.slickNext();
     }
+  
+  useEffect(() => {    
+    slideIndex.current.style.width = `${isShow*10}%`
+    return () => {
+    }
+  }, [isShow])
+  
 
   useEffect(() => {
     const firstItem = sliderRef.current.innerSlider.$list?.find('.custom-slide').first();
@@ -79,6 +84,7 @@ const LastNews = () => {
                 <h1 className='wave-text'>Lastest News</h1>
             </div>
             <button className='news__title-right'>SEE MORE</button>
+            <button className='news__title-right-mobile'>See All +</button>
         </div>
         <Slider {...settings} ref={sliderRef}>
             {latestNews.map((item, index) => (
@@ -100,7 +106,7 @@ const LastNews = () => {
                     <AiOutlineRight size={20} color={!isButtonActive ? 'white' : '#4CA757'}/>
                 </button>
             </div>
-          <div className='line-green'></div>
+          <div ref={slideIndex} className='line-green'></div>
         </div>
     </div>
   )
