@@ -49,4 +49,5 @@
 .app {
   font-family: "intelligent";
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }

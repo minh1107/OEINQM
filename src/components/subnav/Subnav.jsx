@@ -31,7 +31,6 @@ const contentSubNav = [
 const SubNavHome = () => {
     const [content, setContent] = useState(contentSubNav[0]);
 
-    console.log(content)
     return <div className='sub-menu'>
         <div className='subnav'>
         <ul className='subnav-right'>

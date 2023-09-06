@@ -27,7 +27,6 @@ const Header = () => {
     setScrollPosition(currentPosition);
     if(currentPosition < 150) setShowHeader(true)
   };
-  console.log(scrollPosition)
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
