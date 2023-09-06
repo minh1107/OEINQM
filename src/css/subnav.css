@@ -37,6 +37,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 120%; /* 46.8px */
+    color: #FFF;
     margin-bottom: 24px;
 }
 
@@ -47,6 +48,7 @@
     line-height: 150%; 
     max-width: 427px;
     margin-bottom: 32px;
+    color: #FFF;
 }
 
 .subnav-content button {

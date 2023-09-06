@@ -243,19 +243,17 @@
     opacity: 1;
     transform: translateX(0%);
     left: 0;
-    transform: translateX(0);
     height: 100vh;
   }
 }
 
 @keyframes showSubmenuReverse {
   0% {
-    top: 130px;
+    top: 200px;
     width: 100vw;
     opacity: 1;
     transform: translateX(0%);
     left: 0;
-    transform: translateX(0);
     visibility: visible;
     height: 100vh;
   }
