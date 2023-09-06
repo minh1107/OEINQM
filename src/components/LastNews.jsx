@@ -88,8 +88,8 @@ const LastNews = () => {
         </div>
         <Slider {...settings} ref={sliderRef}>
             {latestNews.map((item, index) => (
-              <div>
-                <div key={item.id} className={`news__feed-item`}>
+              <div key={item.id}>
+                <div className={`news__feed-item`}>
                   <img className='news__feed-img' src={item.img} alt=''/>
                   <p className='news__feed-time'>{item.dateTime}</p>
                   <p className='news__feed-content'>{item.content}</p>
