@@ -28,6 +28,32 @@ const Locate = () => {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+  const [project, setProject] = useState(0)
+  useEffect(() => {
+    let intervalId = null;
+  
+    const updateCounts = async () => {
+      if (isVisible) {
+        intervalId = setTimeout(() => {
+          if (project <  16) {
+            setProject((prev) => prev + 1);
+          }
+        }, 50);
+      } else {
+        setProject(0);
+      }
+    };
+  
+    const runAsyncCode = async () => {
+      await Promise.resolve(updateCounts())
+    };
+  
+    runAsyncCode();
+  
+    return () => {
+      intervalId && clearInterval(intervalId);
+    };
+  }, [isVisible, project]);
   return (
     <div className='locate'>
         <div className='locate__group'>
@@ -46,11 +72,7 @@ const Locate = () => {
         </div>
         <h1 id="number-counter1" className='locate__number'>
             {isVisible && (
-                            <CountUp start={0} end={16} duration={2} delay={0.2}>
-                            {({ countUpRef }) => (
-                                <span ref={countUpRef} />
-                            )}
-                            </CountUp>
+                                <span>{project}</span>
                         )}
             <div>
                 <p className='locate__number-plus'>+</p>
