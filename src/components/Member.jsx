@@ -55,13 +55,53 @@ const Member = () => {
         }
       }
     };
-
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-
+ 
+  const [foundedYear, setFoundedYear] = useState(0)
+  const [person, setPerson] = useState(0)
+  const [project, setProject] = useState(0)
+  const [client, setClient] = useState(0)
+  useEffect(() => {
+    let intervalId = null;
+  
+    const updateCounts = async () => {
+      if (isVisible) {
+        intervalId = setTimeout(() => {
+          if (person < 20) {
+            setPerson((prev) => prev + 1);
+          }
+          if (project < foundedYear * 7) {
+            setProject((prev) => prev + 1);
+          }
+          if (client < 20) {
+            setClient((prev) => prev + 1);
+          }
+          if (foundedYear < 2 && person > foundedYear * 10) {
+            setFoundedYear((prev) => prev + 1);
+          }
+        }, 50);
+      } else {
+        setFoundedYear(0)
+        setPerson(0);
+        setProject(0);
+        setClient(0);
+      }
+    };
+  
+    const runAsyncCode = async () => {
+      await Promise.resolve(updateCounts())
+    };
+  
+    runAsyncCode();
+  
+    return () => {
+      intervalId && clearInterval(intervalId);
+    };
+  }, [isVisible, foundedYear, person, project, client]);
   return (
-    <div className='member'>
+      <div className='member'>
         <div className='member__top'>
             <div className='member__top-left'>
                 <p>We are</p>
@@ -113,14 +153,10 @@ const Member = () => {
                     <h1>
                         <div id="number-counter">
                         {isVisible && (
-                            <CountUp start={0} end={2} duration={2} delay={0.2}>
-                            {({ countUpRef }) => (
                                 <div className='member__button-number'>
-                                <span className='member__bottom-countUp' ref={countUpRef} />
+                                <span className='member__bottom-countUp' >{foundedYear}</span>
                                 <div className='member__bottom-plus'>+</div>
                                 </div>
-                            )}
-                            </CountUp>
                         )}
                         <p className='member__bottom-info-number'>Founded year</p>
                     </div></h1>
@@ -129,14 +165,10 @@ const Member = () => {
                 <h1>
                     <div id="number-counter">
                         {isVisible && (
-                            <CountUp start={0} end={20} duration={2} delay={0.2}>
-                            {({ countUpRef }) => (
                                 <div className='member__button-number'>
-                                <span className='member__bottom-countUp' ref={countUpRef} />
+                                <span className='member__bottom-countUp'>{person}</span>
                                 <div className='member__bottom-plus'>+</div>
                                 </div>
-                            )}
-                            </CountUp>
                         )}
                         <p className='member__bottom-info-number'>Personnel</p>
                     </div></h1>
@@ -145,14 +177,10 @@ const Member = () => {
                 <h1>
                     <div id="number-counter">
                         {isVisible && (
-                            <CountUp start={0} end={14} duration={2} delay={0.2}>
-                            {({ countUpRef }) => (
                                 <div className='member__button-number'>
-                                <span className='member__bottom-countUp' ref={countUpRef} />
+                                <span className='member__bottom-countUp' >{project}</span>
                                 <div className='member__bottom-plus'>+</div>
                                 </div>
-                            )}
-                            </CountUp>
                         )}
                         <p className='member__bottom-info-number'>Projects</p>
                     </div></h1>
@@ -161,14 +189,10 @@ const Member = () => {
                 <h1>
                     <div id="number-counter">
                         {isVisible && (
-                            <CountUp start={0} end={20} duration={2} delay={0.2}>
-                            {({ countUpRef }) => (
                                 <div className='member__button-number'>
-                                <span className='member__bottom-countUp' ref={countUpRef} />
+                                <span className='member__bottom-countUp'>{client}</span>
                                 <div className='member__bottom-plus'>+</div>
                                 </div>
-                            )}
-                            </CountUp>
                         )}
                         <p className='member__bottom-info-number'>Clinets & Partners</p>
                     </div></h1>
