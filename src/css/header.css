@@ -217,6 +217,7 @@
   top: 130px;
   opacity: 0;
   z-index: 9; 
+  height: 100vh;
   list-style: none;
   animation: showSubmenuReverse 0.4s forwards ease-in;
 }
@@ -232,7 +233,7 @@
 
 @keyframes showSubmenu {
   0% {
-    width: 50%;
+    width: 50vh;
     opacity: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -249,22 +250,20 @@
 
 @keyframes showSubmenuReverse {
   0% {
-    top: 200px;
     width: 100vw;
     opacity: 1;
     transform: translateX(0%);
     left: 0;
     visibility: visible;
-    height: 100vh;
+    pointer-events: none;
   }
   100% {
     visibility: hidden;
     width: 50%;
     opacity: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
-    height: 0vh;
-    top: calc(50% - 130px);
+    transform: translate(-50%);
+    pointer-events: none;
   }
 }
 
