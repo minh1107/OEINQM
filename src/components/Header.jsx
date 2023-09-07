@@ -59,8 +59,10 @@ const Header = () => {
               <ul className="menu">
                 {pathsMain.map((item) => (
                   <li onClick={handleDropdownClick} 
-                  onMouseEnter={() => item?.subNav ? (headerRef.current.style.background = 'linear-gradient(180deg, #4CA757 0%, #16A571 100%)') : ''} key={item.id} 
-                  onMouseLeave={() => item?.subNav ? (headerRef.current.style.background = '') : ''}
+                  onMouseEnter={() => item?.subNav ? (headerRef.current.style.background = 'linear-gradient(180deg, #4CA757 0%, #16A571 100%)', 
+                  headerRef.current.classList.remove('header__down')
+                  ) : ''} key={item.id} 
+                  onMouseLeave={() => item?.subNav ? (headerRef.current.style.background = '', headerRef.current.classList.add('header__down')) : ''}
                   className="menu-item ">
                     <div className="menu-item-container menu-item-text1">
                       <span className="menu-item-text">{item.value}</span>
